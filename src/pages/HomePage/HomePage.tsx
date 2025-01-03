@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Button, Typography } from '@shared/ui';
+import { Button, Icon, Typography } from '@shared/ui';
 
 export const HomePage: FC = () => {
   return (
@@ -14,8 +14,12 @@ export const HomePage: FC = () => {
         Text 14 span
       </Typography>
 
-      <Button variant="Primary">Button</Button>
-      <Button variant="Secondary">Button</Button>
+      <Button variant="Primary">
+        Button <Icon name="ChevronRight" width={16} height={16} />
+      </Button>
+      <Button variant="Secondary">
+        Button <Icon name="ChevronRight" width={16} height={16} />
+      </Button>
       <Button variant="Primary" disabled>
         Button
       </Button>
