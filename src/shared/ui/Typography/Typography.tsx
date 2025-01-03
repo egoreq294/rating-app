@@ -5,6 +5,13 @@ import styles from './styles.module.css';
 
 type TypographyVariant = 'h1' | 'h2' | 'h3' | 'text14' | 'text16' | 'text18';
 
+interface Props {
+  className?: string;
+  children: ReactNode;
+  variant: TypographyVariant;
+  component?: ElementType;
+}
+
 const CLASSNAME_VARIANT_MAP: Record<TypographyVariant, string> = {
   h1: 'H1',
   h2: 'H2',
@@ -22,13 +29,6 @@ const COMPONENT_VARIANT_MAP: Record<TypographyVariant, string> = {
   text16: 'p',
   text18: 'p',
 };
-
-interface Props {
-  className?: string;
-  children: ReactNode;
-  variant: TypographyVariant;
-  component?: ElementType;
-}
 
 export const Typography: FC<Props> = memo(
   ({ className, variant, children, component }) => {

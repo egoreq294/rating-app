@@ -9,6 +9,7 @@
 
   color: var(--color-text);
   border: none;
+  border-radius: var(--border-radius-m);
   outline: none;
   background: none;
 
@@ -21,7 +22,7 @@
 
 .Primary {
   color: var(--color-text-primary-inverted);
-  border-radius: var(--border-radius);
+
   background-color: var(--color-button-primary);
 
   &:disabled {
@@ -43,7 +44,6 @@
 .Secondary {
   color: var(--color-text-primary);
   border: 1px solid var(--color-border-primary);
-  border-radius: var(--border-radius);
   background-color: var(--color-button-secondary);
 
   &:disabled {

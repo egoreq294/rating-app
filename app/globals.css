@@ -13,6 +13,7 @@
   --color-fill-secondary: #fff;
   --color-fill-error: #de0000;
   --color-fill-success: #c8f8e4;
+  --color-fill-info: #b3c0d9;
 
   --color-button-primary: #7653fc;
   --color-button-primary-hover: #6a4ce1;
@@ -34,7 +35,8 @@
   --gutter-xl: 28px;
   --gutter-xxl: 32px;
 
-  --border-radius: 5px;
+  --border-radius-m: 5px;
+  --border-radius-l: 20px;
 }
 
 body {
