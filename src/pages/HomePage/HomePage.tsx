@@ -1,5 +1,6 @@
-import { Typography } from "@shared/ui";
-import React, { FC } from "react";
+import React, { FC } from 'react';
+
+import { Button, Typography } from '@shared/ui';
 
 export const HomePage: FC = () => {
   return (
@@ -12,6 +13,21 @@ export const HomePage: FC = () => {
       <Typography variant="text14" component="span">
         Text 14 span
       </Typography>
+
+      <Button variant="Primary">Button</Button>
+      <Button variant="Secondary">Button</Button>
+      <Button variant="Primary" disabled>
+        Button
+      </Button>
+      <Button variant="Secondary" disabled>
+        Button
+      </Button>
+      <Button variant="Primary" fullWidth>
+        Button
+      </Button>
+      <Button variant="Secondary" fullWidth>
+        Button
+      </Button>
     </>
   );
 };
