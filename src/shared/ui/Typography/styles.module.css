@@ -1,0 +1,35 @@
+/* stylelint-disable selector-class-pattern */
+.H1 {
+  font-family: var(--font-noto-sans);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.H2 {
+  font-family: var(--font-noto-sans);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.H3 {
+  font-family: var(--font-noto-sans);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.Text14 {
+  font-family: var(--font-noto-sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.Text16 {
+  font-family: var(--font-noto-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
