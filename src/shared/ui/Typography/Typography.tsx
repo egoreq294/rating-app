@@ -3,7 +3,7 @@ import React, { ElementType, FC, memo, ReactNode } from 'react';
 
 import styles from './styles.module.css';
 
-type TypographyVariant = 'h1' | 'h2' | 'h3' | 'text14' | 'text16';
+type TypographyVariant = 'h1' | 'h2' | 'h3' | 'text14' | 'text16' | 'text18';
 
 const CLASSNAME_VARIANT_MAP: Record<TypographyVariant, string> = {
   h1: 'H1',
@@ -11,6 +11,7 @@ const CLASSNAME_VARIANT_MAP: Record<TypographyVariant, string> = {
   h3: 'H3',
   text14: 'Text14',
   text16: 'Text16',
+  text18: 'Text18',
 };
 
 const COMPONENT_VARIANT_MAP: Record<TypographyVariant, string> = {
@@ -19,6 +20,7 @@ const COMPONENT_VARIANT_MAP: Record<TypographyVariant, string> = {
   h3: 'h3',
   text14: 'p',
   text16: 'p',
+  text18: 'p',
 };
 
 interface Props {
