@@ -1,0 +1,14 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-order-config-standard"
+    ],
+    "plugins": [
+        "stylelint-order"
+    ],
+    "rules": {
+        "selector-class-pattern": ["^[A-Z][a-z]+(?:[A-Z][a-z]+)*$",    {
+            "message": "Expected custom property name to be PascalCase"
+          }]
+    }
+}
