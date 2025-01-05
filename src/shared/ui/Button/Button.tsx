@@ -6,7 +6,7 @@ import React, {
   ReactNode,
 } from 'react';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 type ButtonVariant = 'Primary' | 'Secondary';
 

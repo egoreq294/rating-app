@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import React, { FC, ReactNode } from 'react';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 type TagVariant = 'Primary' | 'Secondary' | 'Success' | 'Error' | 'Info';
 type TagSize = 's' | 'm';

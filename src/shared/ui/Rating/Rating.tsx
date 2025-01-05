@@ -11,7 +11,7 @@ import React, {
 
 import { Icon } from '../Icon';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const stars = [1, 2, 3, 4, 5];
 

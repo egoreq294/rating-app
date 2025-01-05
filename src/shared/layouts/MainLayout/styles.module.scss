@@ -3,22 +3,37 @@
 
   min-height: 100vh;
   gap: 0 30px;
-
   grid-template:
     '. header header .' auto
     '. sidebar body .' 1fr
     'footer footer footer footer' auto
     / auto 230px minmax(320px, 1200px) auto;
+
+  @media (width <= 765px) {
+    grid-template-columns: minmax(320px, 1fr);
+    grid-template-areas:
+      'header'
+      'body'
+      'footer';
+  }
 }
 
 .Header {
   grid-area: header;
 
   display: none;
+
+  @media (width <= 765px) {
+    display: block;
+  }
 }
 
 .Sidebar {
   grid-area: sidebar;
+
+  @media (width <= 765px) {
+    display: none;
+  }
 }
 
 .Content {
@@ -27,22 +42,4 @@
 
 .Footer {
   grid-area: footer;
-}
-
-@media (width <= 765px) {
-  .MainLayout {
-    grid-template-columns: minmax(320px, 1fr);
-    grid-template-areas:
-      'header'
-      'body'
-      'footer';
-  }
-
-  .Sidebar {
-    display: none;
-  }
-
-  .Header {
-    display: block;
-  }
 }

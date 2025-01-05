@@ -8,6 +8,10 @@
   background-color: var(--color-fill-primary);
   grid-template-columns: 1fr auto auto;
   gap: var(--gutter-xxs) var(--gutter-xxl);
+
+  @media (width <= 765px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .Link {
@@ -18,10 +22,4 @@
 
 .Link:hover {
   color: var(--color-text-hover);
-}
-
-@media (width <= 765px) {
-  .Footer {
-    grid-template-columns: 1fr;
-  }
 }

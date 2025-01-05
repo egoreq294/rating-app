@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import React, { ElementType, FC, memo, ReactNode } from 'react';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 type TypographyVariant = 'h1' | 'h2' | 'h3' | 'text14' | 'text16' | 'text18';
 
