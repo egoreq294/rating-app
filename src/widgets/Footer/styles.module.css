@@ -1,0 +1,27 @@
+.Footer {
+  display: grid;
+
+  padding: var(--gutter-l) var(--gutter-xxl);
+
+  color: var(--color-text-primary-inverted);
+
+  background-color: var(--color-fill-primary);
+  grid-template-columns: 1fr auto auto;
+  gap: var(--gutter-xxs) var(--gutter-xxl);
+}
+
+.Link {
+  text-decoration: none;
+
+  color: var(--color-text-primary-inverted);
+}
+
+.Link:hover {
+  color: var(--color-text-hover);
+}
+
+@media (width <= 765px) {
+  .Footer {
+    grid-template-columns: 1fr;
+  }
+}

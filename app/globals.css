@@ -5,6 +5,7 @@
   --color-text-success: #1dc37e;
   --color-text-disabled: #8f8f8f;
   --color-text-disabled-inverted: #ececec;
+  --color-text-hover: #dfdfdf;
 
   --color-background-primary: #f5f6f8;
   --color-background-secondary: #fff;
@@ -55,4 +56,6 @@ body {
 *::after,
 *::before {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
