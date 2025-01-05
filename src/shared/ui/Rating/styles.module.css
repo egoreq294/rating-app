@@ -1,0 +1,27 @@
+.Rating {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Icon {
+  display: inline-flex;
+
+  cursor: pointer;
+}
+
+.Icon svg {
+  color: var(--color-fill-default);
+}
+
+.Selected svg {
+  color: var(--color-fill-primary);
+}
+
+.Icon:not(:last-child) svg {
+  margin-right: var(--gutter-xxxs);
+}
+
+.Disabled {
+  cursor: auto;
+}
