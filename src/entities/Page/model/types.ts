@@ -1,9 +1,4 @@
-export enum TopLevelCategory {
-  Courses,
-  Services,
-  Books,
-  Products,
-}
+import { TopLevelCategory } from './constants';
 
 export interface TopPageAdvantage {
   _id: string;
