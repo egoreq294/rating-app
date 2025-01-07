@@ -14,7 +14,6 @@ export const HomePage: FC = () => {
       <Typography variant="h3">Third Header</Typography>
       <Typography variant="text16">Text 16</Typography>
       <Typography variant="text14">Text 14</Typography>
-
       <Rating value={rating} onChange={setRating} />
     </>
   );
