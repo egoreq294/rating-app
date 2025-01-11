@@ -16,7 +16,7 @@ export const generateStaticParams = async (): Promise<
 > => {
   const result = FIRST_LEVEL_MENU.reduce(async (promiseAcc, item) => {
     const acc = await promiseAcc;
-    const menu = await getMenu(item.category);
+    const menu = await getMenu(item.id);
     const result = menu
       .flatMap((item) => item.pages.map((page) => page.alias))
       .map((alias) => ({ category: item.route, alias }));

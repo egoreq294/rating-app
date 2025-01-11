@@ -6,38 +6,11 @@ import { usePathname } from 'next/navigation';
 import React, { FC, JSX } from 'react';
 
 import { FirstLevelMenuItem, PageItem } from '@entities/Menu';
-import { TopLevelCategory } from '@entities/Page';
+import { FIRST_LEVEL_MENU } from '@shared/constants/firstLevelMenu';
 import { useMenu } from '@shared/lib/hooks';
 import { Icon, Typography } from '@shared/ui';
 
 import styles from './styles.module.scss';
-
-const firstLevelMenu: FirstLevelMenuItem[] = [
-  {
-    route: 'courses',
-    name: 'Курсы',
-    icon: 'Courses',
-    id: TopLevelCategory.Courses,
-  },
-  {
-    route: 'services',
-    name: 'Сервисы',
-    icon: 'Services',
-    id: TopLevelCategory.Services,
-  },
-  {
-    route: 'books',
-    name: 'Книги',
-    icon: 'Book',
-    id: TopLevelCategory.Books,
-  },
-  {
-    route: 'products',
-    name: 'Продукты',
-    icon: 'Product',
-    id: TopLevelCategory.Products,
-  },
-];
 
 export const Menu: FC = () => {
   const pathname = usePathname();
@@ -126,7 +99,7 @@ export const Menu: FC = () => {
   const buildFirstLevelMenu = (): JSX.Element => {
     return (
       <>
-        {firstLevelMenu.map((item) => (
+        {FIRST_LEVEL_MENU.map((item) => (
           <div key={item.route}>
             <Link href={`/${item.route}`}>
               <div

@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import React, { FC, ReactNode } from 'react';
 
 import { PageWrapper } from '@app/components';
@@ -14,14 +15,22 @@ interface Props {
 const Layout: FC<Props> = async ({ params, children }) => {
   const { category } = await params;
 
+  if (!FIRST_LEVEL_MENU.find((item) => item.route === category)) {
+    notFound();
+  }
+
   const firstLevelMenu = FIRST_LEVEL_MENU.find(
     (item) => item.route === category,
   )!;
 
-  const menu = await getMenu(firstLevelMenu.category);
+  const menu = await getMenu(firstLevelMenu.id);
+
+  if (!menu.length) {
+    notFound();
+  }
 
   return (
-    <PageWrapper menu={menu} firstCategory={firstLevelMenu.category}>
+    <PageWrapper menu={menu} firstCategory={firstLevelMenu.id}>
       {children}
     </PageWrapper>
   );
