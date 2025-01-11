@@ -1,9 +1,9 @@
 import React, { FC, Suspense } from 'react';
 
-export const RatingPage: FC = () => {
+export const CategoryPage: FC = () => {
   return (
     <Suspense fallback={<span>Loading...</span>}>
-      <div>RatingPage</div>
+      <div>CategoryPage</div>
     </Suspense>
   );
 };
