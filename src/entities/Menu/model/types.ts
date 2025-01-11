@@ -1,6 +1,5 @@
-import { JSX } from 'react';
-
 import { TopLevelCategory } from '@entities/Page';
+import { IconName } from '@shared/ui/Icon/types';
 
 export interface PageItem {
   alias: string;
@@ -20,6 +19,6 @@ export interface MenuItem {
 export interface FirstLevelMenuItem {
   route: string;
   name: string;
-  icon: JSX.Element;
+  icon: IconName;
   id: TopLevelCategory;
 }

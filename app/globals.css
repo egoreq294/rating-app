@@ -2,10 +2,12 @@
 :root {
   --color-text-primary: #3b434e;
   --color-text-primary-inverted: #fff;
+  --color-text-secondary: #787d85;
   --color-text-success: #1dc37e;
   --color-text-disabled: #8f8f8f;
   --color-text-disabled-inverted: #ececec;
   --color-text-hover: #dfdfdf;
+  --color-text-active: #7653fc;
 
   --color-background-primary: #f5f6f8;
   --color-background-secondary: #fff;
@@ -50,6 +52,12 @@ body {
   background-color: var(--color-background-primary);
 
   font-family: var(--font-noto-sans);
+}
+
+a {
+  text-decoration: none;
+
+  color: inherit;
 }
 
 *,

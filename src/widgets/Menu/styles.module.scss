@@ -1,0 +1,67 @@
+// .Menu {
+// }
+
+.FirstLevelMenu {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 20px;
+
+  align-items: center;
+
+  &:hover {
+    color: var(--color-text-active);
+  }
+}
+
+.FirstLevelMenuActive {
+  color: var(--color-text-active);
+}
+
+.SecondLevelMenu {
+  text-transform: uppercase;
+
+  color: var(--color-text-secondary);
+}
+
+.SecondBlock {
+  margin-left: var(--gutter-xs);
+  padding-top: var(--gutter-s);
+  padding-left: var(--gutter-xxl);
+
+  border-left: 1px solid var(--color-border-primary);
+}
+
+.ThirdLevelLink {
+  margin-bottom: 10px;
+
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-text-active);
+  }
+}
+
+.ThirdLevelLinkActive {
+  color: var(--color-text-active);
+}
+
+.SecondLevelBlock {
+  display: none;
+}
+
+.SecondLevelBlockOpened {
+  display: block;
+}
+
+.SecondLevelBlockOpened:last-child {
+  margin-bottom: var(--gutter-m);
+}
+
+.SecondCategoryButton {
+  margin-bottom: var(--gutter-xxs);
+
+  cursor: pointer;
+
+  border: 0;
+  background: none;
+}
