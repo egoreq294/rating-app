@@ -1,4 +1,4 @@
-import { TopLevelCategory } from './constants';
+import { TopLevelCategory } from '../constants/topLevelCategory';
 
 export interface TopPageAdvantage {
   _id: string;

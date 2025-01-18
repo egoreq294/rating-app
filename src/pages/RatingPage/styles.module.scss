@@ -1,0 +1,24 @@
+.Wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter-m);
+}
+
+.Header {
+  display: grid;
+  grid-template: 'title tag sort' / auto 1fr auto;
+  place-items: baseline left;
+  gap: var(--gutter-m);
+}
+
+.Title {
+  grid-area: title;
+}
+
+.Tag {
+  grid-area: tag;
+}
+
+.Sort {
+  grid-area: sort;
+}

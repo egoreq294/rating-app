@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
 
+import { SearchPage } from '@pages/SearchPage';
+
 const Page: FC = () => {
-  return <div>search</div>;
+  return <SearchPage />;
 };
 
 export default Page;

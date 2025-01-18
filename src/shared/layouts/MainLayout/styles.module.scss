@@ -2,7 +2,7 @@
   display: grid;
 
   min-height: 100vh;
-  gap: 0 30px;
+  gap: var(--gutter-xxl);
   grid-template:
     '. header header .' auto
     '. sidebar body .' 1fr
@@ -38,6 +38,10 @@
 
 .Content {
   grid-area: body;
+
+  @media (width <= 765px) {
+    padding: 0 var(--gutter-xs);
+  }
 }
 
 .Footer {

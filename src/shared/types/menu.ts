@@ -1,4 +1,4 @@
-import { TopLevelCategory } from '@entities/Page';
+import { TopLevelCategory } from '@shared/constants/topLevelCategory';
 import { IconName } from '@shared/ui/Icon/types';
 
 export interface PageItem {

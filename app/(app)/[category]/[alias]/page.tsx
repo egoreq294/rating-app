@@ -3,6 +3,8 @@ import React, { FC } from 'react';
 
 import { getMenu } from '@entities/Menu';
 import { getPage } from '@entities/Page';
+import { getProducts } from '@entities/Product';
+import { RatingPage } from '@pages/RatingPage';
 import { FIRST_LEVEL_MENU } from '@shared/constants/firstLevelMenu';
 
 type Params = Promise<{ category: string; alias: string }>;
@@ -27,15 +29,26 @@ export const generateStaticParams = async (): Promise<
 };
 
 const Page: FC<Props> = async ({ params }) => {
-  const { alias } = await params;
+  const { alias, category } = await params;
 
   const page = await getPage(alias);
+  const products = await getProducts(page?.category || '', 10);
 
-  if (!page) {
+  const firstLevelMenu = FIRST_LEVEL_MENU.find(
+    (item) => item.route === category,
+  )!;
+
+  if (!page || !products) {
     notFound();
   }
 
-  return <div>{JSON.stringify(page)}</div>;
+  return (
+    <RatingPage
+      page={page}
+      products={products}
+      firstLevelCategory={firstLevelMenu.id}
+    />
+  );
 };
 
 export default Page;

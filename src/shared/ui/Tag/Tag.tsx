@@ -49,7 +49,7 @@ export const Tag: FC<Props> = ({
   }
 
   return (
-    <div
+    <span
       className={cn(
         styles.Tag,
         styles[TAG_SIZE_MAP[size]],
@@ -59,6 +59,6 @@ export const Tag: FC<Props> = ({
       )}
     >
       {children}
-    </div>
+    </span>
   );
 };

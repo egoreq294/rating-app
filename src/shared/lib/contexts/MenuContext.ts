@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { TopLevelCategory } from '@entities/Page';
+import { TopLevelCategory } from '@shared/constants/topLevelCategory';
 import { MenuContext as MenuContextProps } from '../../types/menuContext';
 
 export const MenuContext = createContext<MenuContextProps>({

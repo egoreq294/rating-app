@@ -1,5 +1,5 @@
-import { FirstLevelMenuItem } from '@entities/Menu';
-import { TopLevelCategory } from '@entities/Page';
+import { FirstLevelMenuItem } from '@shared/types/menu';
+import { TopLevelCategory } from './topLevelCategory';
 
 export const FIRST_LEVEL_MENU: FirstLevelMenuItem[] = [
   {

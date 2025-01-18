@@ -1,0 +1,11 @@
+.Title {
+  margin-bottom: var(--gutter-l);
+}
+
+.Tag {
+  margin-bottom: var(--gutter-xxxs);
+
+  &:not(:last-child) {
+    margin-right: var(--gutter-xxs);
+  }
+}

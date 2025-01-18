@@ -14,7 +14,7 @@ interface Props {
 export const Sidebar: FC<Props> = ({ className }) => {
   return (
     <div className={cn(styles.Sidebar, className)}>
-      <Image priority src={Logo} alt="Logo" className={styles.Logo} />
+      <Image priority src={Logo} alt="Logo" />
       <div>Search</div>
       <Menu />
     </div>

@@ -1,5 +1,5 @@
-import { MenuItem } from '@entities/Menu';
-import { TopLevelCategory } from '@entities/Page';
+import { TopLevelCategory } from '@shared/constants/topLevelCategory';
+import { MenuItem } from './menu';
 
 export interface MenuContext {
   menu: MenuItem[];

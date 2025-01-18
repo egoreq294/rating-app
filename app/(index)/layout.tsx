@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from 'react';
 
 import { PageWrapper } from '@app/components';
 import { getMenu } from '@entities/Menu';
-import { TopLevelCategory } from '@entities/Page';
+import { TopLevelCategory } from '@shared/constants/topLevelCategory';
 
 interface Props {
   children: ReactNode;

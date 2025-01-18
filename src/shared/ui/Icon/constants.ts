@@ -5,8 +5,10 @@ import { ChevronRight } from './assets/ChevronRight';
 import { ChevronUp } from './assets/ChevronUp';
 import { Courses } from './assets/Courses';
 import { Product } from './assets/Product';
+import { Rate } from './assets/Rate';
 import { Services } from './assets/Services';
 import { Star } from './assets/Star';
+import { Success } from './assets/Success';
 
 export const ICON_MAP = {
   ChevronDown,
@@ -18,4 +20,6 @@ export const ICON_MAP = {
   Product,
   Services,
   Book,
+  Rate,
+  Success,
 };

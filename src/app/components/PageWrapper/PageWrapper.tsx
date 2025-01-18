@@ -1,9 +1,9 @@
 import React, { FC, ReactNode } from 'react';
 
 import { MenuProvider } from '@app/providers/MenuProvider';
-import { MenuItem } from '@entities/Menu';
-import { TopLevelCategory } from '@entities/Page';
+import { TopLevelCategory } from '@shared/constants/topLevelCategory';
 import { MainLayout } from '@shared/layouts';
+import { MenuItem } from '@shared/types/menu';
 import { Footer } from '@widgets/Footer';
 import { Sidebar } from '@widgets/Sidebar';
 
