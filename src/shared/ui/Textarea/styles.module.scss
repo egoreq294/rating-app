@@ -1,0 +1,21 @@
+.Textarea {
+  padding: var(--gutter-xxs) var(--gutter-s);
+
+  text-align: left;
+
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: var(--border-radius-m);
+  outline-color: var(--color-button-primary);
+  background-color: var(--color-background-secondary);
+  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 5%);
+
+  font-family: var(--font-noto-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+
+  &::placeholder {
+    color: var(--color-text-secondary);
+  }
+}

@@ -3,6 +3,7 @@
 import React, { FC, useState } from 'react';
 
 import { Rating, Typography } from '@shared/ui';
+import { Textarea } from '@shared/ui/Textarea';
 
 export const HomePage: FC = () => {
   const [rating, setRating] = useState(3);
@@ -15,6 +16,7 @@ export const HomePage: FC = () => {
       <Typography variant="text16">Text 16</Typography>
       <Typography variant="text14">Text 14</Typography>
       <Rating value={rating} onChange={setRating} />
+      <Textarea placeholder="text" />
     </>
   );
 };
