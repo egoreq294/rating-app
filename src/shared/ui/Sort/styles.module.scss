@@ -1,0 +1,22 @@
+.Sort {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-xxs);
+}
+
+.Button {
+  display: flex;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  border: 0;
+  background: none;
+
+  //   gap: var(--gutter-xxxs);
+}
+
+.Active {
+  color: var(--color-fill-primary);
+}
