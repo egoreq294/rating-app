@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { FC, JSX } from 'react';
 
-import { FirstLevelMenuItem, PageItem } from '@entities/Menu';
 import { FIRST_LEVEL_MENU } from '@shared/constants/firstLevelMenu';
 import { useMenu } from '@shared/lib/hooks';
+import { FirstLevelMenuItem, PageItem } from '@shared/types/menu';
 import { Icon, Typography } from '@shared/ui';
 
 import styles from './styles.module.scss';

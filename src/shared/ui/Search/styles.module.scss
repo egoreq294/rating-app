@@ -1,0 +1,14 @@
+.Search {
+  position: relative;
+}
+
+.Input {
+  width: 100%;
+  padding-right: 36px;
+}
+
+.Button {
+  position: absolute;
+  top: var(--gutter-xxxs);
+  right: var(--gutter-xxxs);
+}

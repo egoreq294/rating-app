@@ -6,6 +6,7 @@ import { ChevronUp } from './assets/ChevronUp';
 import { Courses } from './assets/Courses';
 import { Product } from './assets/Product';
 import { Rate } from './assets/Rate';
+import { Search } from './assets/Search';
 import { Services } from './assets/Services';
 import { SortAsc } from './assets/SortAsc';
 import { SortDesc } from './assets/SortDesc';
@@ -26,4 +27,5 @@ export const ICON_MAP = {
   Success,
   SortAsc,
   SortDesc,
+  Search,
 };
