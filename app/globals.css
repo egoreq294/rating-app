@@ -30,6 +30,8 @@
   --color-button-secondary-disabled: #f8f8f8;
 
   --color-border-primary: #ebebeb;
+  --color-border-success: #1dc37e;
+  --color-border-error: #fc836d;
 
   --gutter-xxxs: 4px;
   --gutter-xxs: 8px;

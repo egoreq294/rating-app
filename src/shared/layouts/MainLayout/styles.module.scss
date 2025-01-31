@@ -9,7 +9,7 @@
     'footer footer footer footer' auto
     / auto 230px minmax(320px, 1200px) auto;
 
-  @media (width <= 765px) {
+  @media (width < 1280px) {
     grid-template-columns: minmax(320px, 1fr);
     grid-template-areas:
       'header'
@@ -23,7 +23,7 @@
 
   display: none;
 
-  @media (width <= 765px) {
+  @media (width < 1280px) {
     display: block;
   }
 }
@@ -31,7 +31,7 @@
 .Sidebar {
   grid-area: sidebar;
 
-  @media (width <= 765px) {
+  @media (width < 1280px) {
     display: none;
   }
 }
@@ -39,7 +39,7 @@
 .Content {
   grid-area: body;
 
-  @media (width <= 765px) {
+  @media (width < 1280px) {
     padding: 0 var(--gutter-xs);
   }
 }

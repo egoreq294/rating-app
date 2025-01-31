@@ -22,7 +22,7 @@ interface Props
   > {
   disabled?: boolean;
   value: number;
-  onChange: (value: number) => void;
+  onChange?: (value: number) => void;
 }
 
 export const Rating: FC<Props> = ({
@@ -54,7 +54,7 @@ export const Rating: FC<Props> = ({
       return;
     }
 
-    onChange(starCount);
+    onChange?.(starCount);
     setCurrentStarCount(starCount);
   };
 
@@ -64,7 +64,7 @@ export const Rating: FC<Props> = ({
       if (disabled || e.code !== 'Space') {
         return;
       }
-      onChange(starCount);
+      onChange?.(starCount);
       setCurrentStarCount(starCount);
     };
 

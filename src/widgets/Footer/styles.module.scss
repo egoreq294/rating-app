@@ -9,7 +9,7 @@
   grid-template-columns: 1fr auto auto;
   gap: var(--gutter-xxs) var(--gutter-xxl);
 
-  @media (width <= 765px) {
+  @media (width < 1280px) {
     grid-template-columns: 1fr;
   }
 }

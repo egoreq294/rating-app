@@ -22,3 +22,9 @@
 .Sort {
   grid-area: sort;
 }
+
+.ProductsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-l);
+}

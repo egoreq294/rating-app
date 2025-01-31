@@ -7,6 +7,7 @@ import { TopPageModel } from '@shared/types/page';
 import { ProductModel } from '@shared/types/product';
 import { Sort, SortItem, SortState, Tag, Typography } from '@shared/ui';
 import { Advantages } from './Advantages';
+import { Product } from './Product';
 import { Skills } from './Skills';
 import { getSortedProducts } from './utils';
 import { Vacancies } from './Vacancies';
@@ -63,9 +64,11 @@ export const RatingPage: FC<Props> = ({
           setSort={setSortState}
         />
       </div>
-      <div>
+      <div className={styles.ProductsBlock}>
         {!!sortedProducts.length &&
-          sortedProducts.map((item) => <div key={item._id}>{item.title}</div>)}
+          sortedProducts.map((item) => (
+            <Product key={item._id} product={item} />
+          ))}
       </div>
       {page.hh && firstLevelCategory === TopLevelCategory.Courses && (
         <Vacancies title={page.category} source="hh.ru" vacancies={page.hh} />

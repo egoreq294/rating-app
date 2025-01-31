@@ -1,0 +1,71 @@
+.Wrapper {
+  display: grid;
+  gap: var(--gutter-s) 0;
+
+  padding: var(--gutter-s) 0;
+
+  border-top: 1px solid var(--color-border-primary);
+  border-bottom: 1px solid var(--color-border-primary);
+  grid-template: 'description description' 'info aspects' / 1fr 1fr;
+
+  @media (width < 992px) {
+    grid-template: 'description' 'info' 'aspects' / 1fr;
+  }
+}
+
+.Description {
+  grid-area: description;
+}
+
+.Info {
+  grid-area: info;
+
+  padding-right: 60px;
+
+  @media (width < 992px) {
+    padding-right: 0;
+  }
+}
+
+.Aspects {
+  grid-area: aspects;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-m);
+}
+
+.DescriptionItem {
+  display: flex;
+}
+
+.DescriptionTerm {
+  display: flex;
+  align-items: baseline;
+  flex-grow: 1;
+
+  white-space: nowrap;
+
+  &::after {
+    width: 100%;
+
+    content: '';
+
+    color: #c4c4c4;
+
+    border-bottom: 1px dotted;
+    margin-inline: var(--gutter-xxs);
+  }
+}
+
+.Advantages {
+  padding-left: var(--gutter-s);
+
+  border-left: 3px solid var(--color-border-success);
+}
+
+.Disadvantages {
+  padding-left: var(--gutter-s);
+
+  border-left: 3px solid var(--color-border-error);
+}

@@ -1,0 +1,16 @@
+.Footer {
+  display: flex;
+
+  padding-top: var(--gutter-s);
+  gap: var(--gutter-m);
+
+  @media (width < 768px) {
+    justify-content: center;
+  }
+}
+
+.Button {
+  @media (width < 768px) {
+    width: 100%;
+  }
+}

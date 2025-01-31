@@ -1,0 +1,86 @@
+.Header {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+
+  justify-content: space-between;
+  gap: var(--gutter-s) var(--gutter-m);
+
+  padding-bottom: var(--gutter-s);
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+.LogoBlock {
+  display: flex;
+  gap: var(--gutter-m);
+}
+
+.TitleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-xxxs);
+}
+
+.Image {
+  object-fit: contain;
+  grid-area: logo;
+
+  border-radius: var(--border-radius-m);
+
+  @media (width < 768px) {
+    display: none;
+  }
+}
+
+.Tags {
+  display: flex;
+
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--gutter-xxxs);
+}
+
+.Info {
+  display: flex;
+
+  align-items: baseline;
+
+  white-space: nowrap;
+  gap: var(--gutter-xxs) var(--gutter-m);
+
+  @media (width < 1280px) {
+    justify-self: start;
+  }
+
+  @media (width < 992px) {
+    flex-direction: column;
+  }
+}
+
+.Price {
+  display: flex;
+  gap: var(--gutter-xxxs);
+
+  align-items: center;
+}
+
+.InfoTitle {
+  display: flex;
+  align-items: baseline;
+
+  height: 28px;
+}
+
+.InfoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0 var(--gutter-m);
+
+  @media (width < 992px) {
+    align-items: baseline;
+    flex-direction: row-reverse;
+  }
+}
