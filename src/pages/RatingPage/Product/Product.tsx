@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React, { FC, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 
 import { ProductModel } from '@shared/types/product';
 import { Card } from '@shared/ui';
@@ -17,6 +17,12 @@ interface Props {
 
 export const Product: FC<Props> = ({ className, product }) => {
   const [isReviewOpened, setIsReviewOpened] = useState(false);
+  const reviewRef = useRef<HTMLDivElement>(null);
+
+  const scrollToReview = (): void => {
+    setIsReviewOpened(true);
+    reviewRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
     <div className={className}>
@@ -25,7 +31,7 @@ export const Product: FC<Props> = ({ className, product }) => {
           [styles.ProductWithReview]: isReviewOpened,
         })}
       >
-        <Header product={product} />
+        <Header product={product} scrollToReview={scrollToReview} />
         <Body product={product} />
         <Footer
           isReviewOpened={isReviewOpened}
@@ -37,6 +43,7 @@ export const Product: FC<Props> = ({ className, product }) => {
         className={cn(styles.Card, styles.Review, {
           [styles.ReviewClosed]: !isReviewOpened,
         })}
+        ref={reviewRef}
       >
         <Review reviews={product.reviews} productId={product._id} />
       </Card>

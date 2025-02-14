@@ -10,9 +10,10 @@ import styles from './styles.module.scss';
 
 interface Props {
   product: ProductModel;
+  scrollToReview: () => void;
 }
 
-export const Header: FC<Props> = ({ product }) => {
+export const Header: FC<Props> = ({ product, scrollToReview }) => {
   return (
     <div className={styles.Header}>
       <div className={styles.LogoBlock}>
@@ -63,10 +64,12 @@ export const Header: FC<Props> = ({ product }) => {
               disabled
             />
           </div>
-          <Typography variant="text14">
-            {product.reviewCount}{' '}
-            {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
-          </Typography>
+          <a href="#ref" onClick={scrollToReview}>
+            <Typography variant="text14">
+              {product.reviewCount}{' '}
+              {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
+            </Typography>
+          </a>
         </div>
       </div>
     </div>
