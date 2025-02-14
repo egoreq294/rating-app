@@ -1,4 +1,11 @@
+.InputContainer {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--gutter-xxxs);
+}
+
 .Input {
+  height: 36px;
   padding: var(--gutter-xxs) var(--gutter-s);
 
   text-align: left;
@@ -18,4 +25,18 @@
   &::placeholder {
     color: var(--color-text-secondary);
   }
+}
+
+.Error {
+  border: 1px solid var(--color-border-error);
+}
+
+.ErrorMessage {
+  color: var(--color-text-error);
+
+  font-family: var(--font-noto-sans);
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
 }

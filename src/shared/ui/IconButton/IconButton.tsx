@@ -8,7 +8,8 @@ import React, {
 
 import styles from './styles.module.scss';
 
-type ButtonVariant = 'Primary' | 'Secondary';
+type ButtonVariant = 'Primary' | 'Secondary' | 'Ghost';
+type ButtonSize = 'S' | 'M';
 
 interface Props
   extends DetailedHTMLProps<
@@ -17,18 +18,27 @@ interface Props
   > {
   children: ReactNode;
   variant: ButtonVariant;
+  size?: ButtonSize;
 }
 
 export const IconButton: FC<Props> = ({
   children,
   variant,
   className,
+  size = 'M',
+  type = 'button',
   ...props
 }) => {
   return (
     <button
       {...props}
-      className={cn(styles.IconButton, styles[variant], className)}
+      className={cn(
+        styles.IconButton,
+        styles[variant],
+        styles[size],
+        className,
+      )}
+      type={type}
     >
       {children}
     </button>

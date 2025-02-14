@@ -35,6 +35,7 @@ export const Search: FC<Props> = ({ className, value, onChange, onSubmit }) => {
       <IconButton
         variant="Primary"
         className={styles.Button}
+        size="S"
         onClick={() => {
           onSubmit(value);
         }}

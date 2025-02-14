@@ -25,6 +25,7 @@ export const Button: FC<Props> = ({
   variant,
   fullWidth,
   className,
+  type = 'button',
   ...props
 }) => {
   return (
@@ -38,6 +39,7 @@ export const Button: FC<Props> = ({
         },
         className,
       )}
+      type={type}
     >
       {children}
     </button>

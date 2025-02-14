@@ -1,0 +1,80 @@
+.ReviewForm {
+  display: grid;
+  grid-template-columns: [start] auto 1fr auto [end];
+  gap: var(--gutter-m) var(--gutter-xxl);
+  place-items: flex-start flex-start;
+
+  @media (width < 992px) {
+    grid-template-columns: [start] 1fr 1fr [end];
+  }
+
+  @media (width < 768px) {
+    grid-template-columns: [start] 1fr [end];
+  }
+}
+
+.InputContainer {
+  @media (width < 992px) {
+    justify-self: stretch;
+  }
+}
+
+.Rating {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: var(--gutter-m);
+
+  @media (width < 992px) {
+    grid-column: start / end;
+  }
+}
+
+.TextareaContainer {
+  grid-column: start / end;
+  justify-self: stretch;
+}
+
+.Textarea {
+  min-height: 72px;
+}
+
+.Footer {
+  display: grid;
+  grid-column: start / end;
+  grid-template-columns: repeat(2, auto);
+  gap: var(--gutter-xxs);
+
+  align-items: center;
+
+  @media (width < 992px) {
+    align-items: flex-start;
+  }
+}
+
+.Success {
+  position: relative;
+
+  margin-top: var(--gutter-m);
+
+  padding: var(--gutter-xs);
+
+  border-radius: var(--border-radius-m);
+  background-color: var(--color-fill-success);
+}
+
+.Error {
+  position: relative;
+
+  margin-top: var(--gutter-m);
+
+  padding: var(--gutter-xs);
+
+  border-radius: var(--border-radius-m);
+  background-color: var(--color-fill-error);
+}
+
+.CloseButton {
+  position: absolute;
+  top: var(--gutter-xs);
+  right: var(--gutter-xs);
+}

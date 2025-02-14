@@ -1,9 +1,9 @@
 .IconButton {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  padding: var(--gutter-xxxs);
+  padding: 0;
 
   cursor: pointer;
 
@@ -54,4 +54,34 @@
   &:active:not(:disabled) {
     background-color: var(--color-button-secondary-active);
   }
+}
+
+.Ghost {
+  color: var(--color-text-primary);
+
+  &:disabled {
+    cursor: not-allowed;
+
+    color: var(--color-text-disabled);
+  }
+
+  &:hover:not(:disabled) {
+    color: var(--color-button-primary);
+  }
+
+  &:active:not(:disabled) {
+    color: var(--color-button-primary-active);
+  }
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.S {
+  width: 24px;
+  height: 24px;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.M {
+  width: 32px;
+  height: 32px;
 }

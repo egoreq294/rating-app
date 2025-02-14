@@ -8,14 +8,16 @@
   --color-text-disabled-inverted: #ececec;
   --color-text-hover: #dfdfdf;
   --color-text-active: #7653fc;
+  --color-text-error: #db1042;
 
   --color-background-primary: #f5f6f8;
   --color-background-secondary: #fff;
 
   --color-fill-primary: #7653fc;
   --color-fill-secondary: #fff;
-  --color-fill-error: #de0000;
-  --color-fill-success: #c8f8e4;
+  --color-fill-danger: #de0000;
+  --color-fill-error: #fde7ed;
+  --color-fill-success: #e9fbf3;
   --color-fill-info: #b3c0d9;
   --color-fill-default: #e2e2e2;
   --color-fill-card: #f9f8ff;
@@ -31,7 +33,7 @@
 
   --color-border-primary: #ebebeb;
   --color-border-success: #1dc37e;
-  --color-border-error: #fc836d;
+  --color-border-error: #db1042;
 
   --gutter-xxxs: 4px;
   --gutter-xxs: 8px;

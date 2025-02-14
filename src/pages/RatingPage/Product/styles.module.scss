@@ -1,5 +1,24 @@
-.Product {
-  display: grid;
-
+.Card {
   padding: var(--gutter-xl);
+
+  @media (width < 768px) {
+    padding: var(--gutter-xs);
+  }
+}
+
+.ProductWithReview {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.Review {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.ReviewClosed {
+  overflow: hidden;
+
+  max-height: 0;
+  padding: 0;
 }

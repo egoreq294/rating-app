@@ -1,8 +1,10 @@
+import { Avatar } from './assets/Avatar';
 import { Book } from './assets/Book';
 import { ChevronDown } from './assets/ChevronDown';
 import { ChevronLeft } from './assets/ChevronLeft';
 import { ChevronRight } from './assets/ChevronRight';
 import { ChevronUp } from './assets/ChevronUp';
+import { Close } from './assets/Close';
 import { Courses } from './assets/Courses';
 import { Product } from './assets/Product';
 import { Rate } from './assets/Rate';
@@ -28,4 +30,6 @@ export const ICON_MAP = {
   SortAsc,
   SortDesc,
   Search,
+  Avatar,
+  Close,
 };

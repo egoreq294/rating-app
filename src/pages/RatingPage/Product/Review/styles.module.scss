@@ -1,0 +1,43 @@
+.ReviewItem {
+  display: grid;
+  grid-template-columns: [start] auto 1fr auto auto [end];
+
+  align-items: center;
+  gap: var(--gutter-xs);
+
+  @media (width < 768px) {
+    grid-template-columns: [start] 30px [title-start] auto [date-end] 1fr [end];
+  }
+}
+
+.Avatar {
+  color: var(--color-fill-primary);
+}
+
+.Title {
+  @media (width < 768px) {
+    grid-column: title-start / end;
+  }
+}
+
+.Date {
+  @media (width < 768px) {
+    grid-column: start / date-end;
+  }
+}
+
+.Rating {
+  justify-content: flex-start;
+}
+
+.Description {
+  grid-column: start / end;
+}
+
+.Hr {
+  height: 1px;
+  margin: var(--gutter-m) 0;
+
+  border: none;
+  background: var(--color-border-primary);
+}

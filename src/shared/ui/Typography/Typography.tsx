@@ -11,6 +11,7 @@ type TypographyVariant =
   | 'text16'
   | 'text18'
   | 'caption20'
+  | 'textBold14'
   | 'textBold16'
   | 'textBold20'
   | 'textBold26'
@@ -31,6 +32,7 @@ const CLASSNAME_VARIANT_MAP: Record<TypographyVariant, string> = {
   text16: 'Text16',
   text18: 'Text18',
   caption20: 'Caption20',
+  textBold14: 'TextBold14',
   textBold16: 'TextBold16',
   textBold20: 'TextBold20',
   textBold26: 'TextBold26',
@@ -45,6 +47,7 @@ const COMPONENT_VARIANT_MAP: Record<TypographyVariant, string> = {
   text16: 'p',
   text18: 'p',
   caption20: 'p',
+  textBold14: 'p',
   textBold16: 'p',
   textBold20: 'p',
   textBold26: 'p',

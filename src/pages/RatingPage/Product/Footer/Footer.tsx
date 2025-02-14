@@ -1,17 +1,33 @@
-import React, { FC } from 'react';
+import React, { Dispatch, FC, SetStateAction } from 'react';
 
-import { Button } from '@shared/ui';
+import { Button, Icon } from '@shared/ui';
 
 import styles from './styles.module.scss';
 
-export const Footer: FC = () => {
+interface Props {
+  isReviewOpened: boolean;
+  setIsReviewOpened: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Footer: FC<Props> = ({ isReviewOpened, setIsReviewOpened }) => {
   return (
     <div className={styles.Footer}>
       <Button className={styles.Button} variant="Primary">
         Узнать подробнее
       </Button>
-      <Button className={styles.Button} variant="Secondary">
+      <Button
+        className={styles.Button}
+        variant="Secondary"
+        onClick={() => {
+          setIsReviewOpened((prev) => !prev);
+        }}
+      >
         Читать отзывы
+        <Icon
+          name={isReviewOpened ? 'ChevronDown' : 'ChevronRight'}
+          width={20}
+          height={20}
+        />
       </Button>
     </div>
   );
