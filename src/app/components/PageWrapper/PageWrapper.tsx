@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC, ReactNode } from 'react';
 
 import { MenuProvider } from '@app/providers/MenuProvider';
@@ -5,7 +7,10 @@ import { TopLevelCategory } from '@shared/constants/topLevelCategory';
 import { MainLayout } from '@shared/layouts';
 import { MenuItem } from '@shared/types/menu';
 import { Footer } from '@widgets/Footer';
+import { ScrollToTopButton } from '@widgets/ScrollToTopButton';
 import { Sidebar } from '@widgets/Sidebar';
+
+import styles from './styles.module.scss';
 
 interface Props {
   children: ReactNode;
@@ -22,6 +27,7 @@ export const PageWrapper: FC<Props> = ({ menu, firstCategory, children }) => {
         content={children}
         footer={<Footer />}
       />
+      <ScrollToTopButton className={styles.ScrollToTopButton} />
     </MenuProvider>
   );
 };
