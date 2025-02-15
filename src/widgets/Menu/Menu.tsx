@@ -1,6 +1,7 @@
 'use client';
 
 import cn from 'classnames';
+import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { FC, JSX } from 'react';
@@ -16,6 +17,21 @@ export const Menu: FC = () => {
   const pathname = usePathname();
 
   const { menu, setMenu, firstCategory } = useMenu();
+
+  const variants: Variants = {
+    visible: {
+      marginBottom: 'var(--gutter-m)',
+    },
+    hidden: { marginBottom: 0 },
+  };
+
+  const childrenVariants: Variants = {
+    visible: {
+      opacity: 1,
+      height: 'auto',
+    },
+    hidden: { opacity: 0, height: 0 },
+  };
 
   const openSecondLevel = (secondCategory: string): void => {
     if (!setMenu) {
@@ -39,16 +55,17 @@ export const Menu: FC = () => {
     return (
       <>
         {pages.map((item) => (
-          <Link
-            href={`/${route}/${item.alias}`}
-            className={cn(styles.ThirdLevelLink, {
-              [styles.ThirdLevelLinkActive]:
-                `/${route}/${item.alias}` === pathname,
-            })}
-            key={item.category}
-          >
-            <Typography variant="text16">{item.category}</Typography>
-          </Link>
+          <motion.div key={item.category} variants={childrenVariants}>
+            <Link
+              href={`/${route}/${item.alias}`}
+              className={cn(styles.ThirdLevelLink, {
+                [styles.ThirdLevelLinkActive]:
+                  `/${route}/${item.alias}` === pathname,
+              })}
+            >
+              <Typography variant="text16">{item.category}</Typography>
+            </Link>
+          </motion.div>
         ))}
       </>
     );
@@ -82,13 +99,15 @@ export const Menu: FC = () => {
                 </Typography>
               </button>
 
-              <div
-                className={cn(styles.SecondLevelBlock, {
-                  [styles.SecondLevelBlockOpened]: item.isOpened,
-                })}
+              <motion.div
+                layout
+                variants={variants}
+                initial={item.isOpened ? 'visible' : 'hidden'}
+                animate={item.isOpened ? 'visible' : 'hidden'}
+                className={styles.SecondLevelBlock}
               >
                 {buildThirdLevelMenu(item.pages, firstLevelMenu.route)}
-              </div>
+              </motion.div>
             </div>
           );
         })}
@@ -100,7 +119,7 @@ export const Menu: FC = () => {
     return (
       <>
         {FIRST_LEVEL_MENU.map((item) => (
-          <div key={item.route}>
+          <div key={item.id}>
             <Link href={`/${item.route}`}>
               <div
                 className={cn(styles.FirstLevelMenu, {

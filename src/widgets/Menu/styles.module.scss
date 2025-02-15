@@ -46,15 +46,7 @@
 }
 
 .SecondLevelBlock {
-  display: none;
-}
-
-.SecondLevelBlockOpened {
-  display: block;
-}
-
-.SecondLevelBlockOpened:last-child {
-  margin-bottom: var(--gutter-m);
+  overflow: hidden;
 }
 
 .SecondCategoryButton {
