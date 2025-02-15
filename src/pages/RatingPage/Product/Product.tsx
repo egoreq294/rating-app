@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { motion, Variants } from 'framer-motion';
 import React, { FC, useRef, useState } from 'react';
 
 import { ProductModel } from '@shared/types/product';
@@ -19,6 +20,15 @@ export const Product: FC<Props> = ({ className, product }) => {
   const [isReviewOpened, setIsReviewOpened] = useState(false);
   const reviewRef = useRef<HTMLDivElement>(null);
 
+  const animationVariants: Variants = {
+    visible: {
+      height: 'auto',
+    },
+    hidden: {
+      height: 0,
+    },
+  };
+
   const scrollToReview = (): void => {
     setIsReviewOpened(true);
     reviewRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -38,15 +48,20 @@ export const Product: FC<Props> = ({ className, product }) => {
           setIsReviewOpened={setIsReviewOpened}
         />
       </Card>
-      <Card
-        variant="Secondary"
-        className={cn(styles.Card, styles.Review, {
-          [styles.ReviewClosed]: !isReviewOpened,
-        })}
-        ref={reviewRef}
+      <motion.div
+        variants={animationVariants}
+        initial="hidden"
+        animate={isReviewOpened ? 'visible' : 'hidden'}
+        className={styles.ReviewContaier}
       >
-        <Review reviews={product.reviews} productId={product._id} />
-      </Card>
+        <Card
+          variant="Secondary"
+          className={cn(styles.Card, styles.Review)}
+          ref={reviewRef}
+        >
+          <Review reviews={product.reviews} productId={product._id} />
+        </Card>
+      </motion.div>
     </div>
   );
 };
