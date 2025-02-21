@@ -8,13 +8,20 @@ import { Input } from '../Input';
 import styles from './styles.module.scss';
 
 interface Props {
+  containerClassName?: string;
   className?: string;
   value: string;
   onChange: (value: string) => void;
   onSubmit: (value: string) => void;
 }
 
-export const Search: FC<Props> = ({ className, value, onChange, onSubmit }) => {
+export const Search: FC<Props> = ({
+  className,
+  containerClassName,
+  value,
+  onChange,
+  onSubmit,
+}) => {
   const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = (e) => {
     if (e.key === 'Enter' && value) {
       onSubmit(value);
@@ -22,15 +29,16 @@ export const Search: FC<Props> = ({ className, value, onChange, onSubmit }) => {
   };
 
   return (
-    <div className={cn(styles.Search, className)}>
+    <div className={cn(styles.Search, containerClassName)}>
       <Input
         placeholder="Поиск"
         value={value}
-        onChange={(e) => {
-          onChange(e.target.value);
+        onChange={(value) => {
+          onChange(value);
         }}
         onKeyDown={handleKeyDown}
         className={styles.Input}
+        containerClassName={className}
       />
       <IconButton
         variant="Primary"

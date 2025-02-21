@@ -2,4 +2,12 @@
   display: grid;
   align-content: start;
   gap: var(--gutter-m);
+
+  @media (width < 1280px) {
+    padding-top: 44px;
+  }
+}
+
+.Search {
+  width: 100%;
 }

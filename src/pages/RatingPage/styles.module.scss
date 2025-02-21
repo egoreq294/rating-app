@@ -8,11 +8,19 @@
   display: grid;
   grid-template: 'title tag sort' / auto 1fr auto;
   place-items: center left;
-  gap: var(--gutter-m);
+  gap: var(--gutter-xxs) var(--gutter-m);
+
+  @media (width < 768px) {
+    grid-template: 'title tag' 'sort sort' / auto 1fr;
+
+    align-items: baseline;
+  }
 }
 
 .Title {
   grid-area: title;
+
+  hyphens: auto;
 }
 
 .Tag {

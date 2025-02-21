@@ -6,6 +6,7 @@ import { ChevronRight } from './assets/ChevronRight';
 import { ChevronUp } from './assets/ChevronUp';
 import { Close } from './assets/Close';
 import { Courses } from './assets/Courses';
+import { Menu } from './assets/Menu';
 import { Product } from './assets/Product';
 import { Rate } from './assets/Rate';
 import { Search } from './assets/Search';
@@ -32,4 +33,5 @@ export const ICON_MAP = {
   Search,
   Avatar,
   Close,
+  Menu,
 };

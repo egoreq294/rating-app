@@ -16,6 +16,10 @@
       'body'
       'footer';
   }
+
+  @media (width < 768px) {
+    gap: var(--gutter-xs);
+  }
 }
 
 .Header {

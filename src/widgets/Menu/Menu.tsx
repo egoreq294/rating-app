@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React, { FC, JSX } from 'react';
+import React, { Dispatch, FC, JSX, SetStateAction } from 'react';
 
 import { FIRST_LEVEL_MENU } from '@shared/constants/firstLevelMenu';
 import { useMenu } from '@shared/lib/hooks';
@@ -13,7 +13,12 @@ import { Icon, Typography } from '@shared/ui';
 
 import styles from './styles.module.scss';
 
-export const Menu: FC = () => {
+interface Props {
+  setIsBurgerClose?: Dispatch<SetStateAction<boolean>>;
+  isMobile?: boolean;
+}
+
+export const Menu: FC<Props> = ({ setIsBurgerClose, isMobile }) => {
   const pathname = usePathname();
 
   const { menu, setMenu, firstCategory } = useMenu();
@@ -57,6 +62,11 @@ export const Menu: FC = () => {
         {pages.map((item) => (
           <motion.div key={item.category} variants={childrenVariants}>
             <Link
+              onClick={() => {
+                if (isMobile) {
+                  setIsBurgerClose?.(false);
+                }
+              }}
               href={`/${route}/${item.alias}`}
               className={cn(styles.ThirdLevelLink, {
                 [styles.ThirdLevelLinkActive]:

@@ -7,6 +7,7 @@ import { TopLevelCategory } from '@shared/constants/topLevelCategory';
 import { MainLayout } from '@shared/layouts';
 import { MenuItem } from '@shared/types/menu';
 import { Footer } from '@widgets/Footer';
+import { Header } from '@widgets/Header';
 import { ScrollToTopButton } from '@widgets/ScrollToTopButton';
 import { Sidebar } from '@widgets/Sidebar';
 
@@ -22,7 +23,7 @@ export const PageWrapper: FC<Props> = ({ menu, firstCategory, children }) => {
   return (
     <MenuProvider menu={menu} firstCategory={firstCategory}>
       <MainLayout
-        header={<div>header</div>}
+        header={<Header />}
         sidebar={<Sidebar />}
         content={children}
         footer={<Footer />}
