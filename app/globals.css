@@ -2,18 +2,18 @@
 :root {
   --color-text-primary: #3b434e;
   --color-text-primary-inverted: #fff;
-  --color-text-secondary: #787d85;
-  --color-text-success: #1dc37e;
+  --color-text-secondary: #6c7077;
+  --color-text-success: #138053;
   --color-text-disabled: #8f8f8f;
   --color-text-disabled-inverted: #ececec;
   --color-text-hover: #dfdfdf;
-  --color-text-active: #7653fc;
+  --color-text-active: #7351f5;
   --color-text-error: #db1042;
 
   --color-background-primary: #f5f6f8;
   --color-background-secondary: #fff;
 
-  --color-fill-primary: #7653fc;
+  --color-fill-primary: #7351f5;
   --color-fill-secondary: #fff;
   --color-fill-danger: #de0000;
   --color-fill-error: #fde7ed;
@@ -22,7 +22,7 @@
   --color-fill-default: #e2e2e2;
   --color-fill-card: #f9f8ff;
 
-  --color-button-primary: #7653fc;
+  --color-button-primary: #7351f5;
   --color-button-primary-hover: #6a4ce1;
   --color-button-primary-active: #5b42c1;
   --color-button-primary-disabled: #b8aef9;
