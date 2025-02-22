@@ -56,12 +56,14 @@ export const Menu: FC<Props> = ({ setIsBurgerClose, isMobile }) => {
   const buildThirdLevelMenu = (
     pages: PageItem[],
     route: string,
+    isOpened?: boolean,
   ): JSX.Element => {
     return (
       <>
         {pages.map((item) => (
           <motion.div key={item.category} variants={childrenVariants}>
             <Link
+              tabIndex={isOpened ? 0 : -1}
               onClick={() => {
                 if (isMobile) {
                   setIsBurgerClose?.(false);
@@ -116,7 +118,11 @@ export const Menu: FC<Props> = ({ setIsBurgerClose, isMobile }) => {
                 animate={item.isOpened ? 'visible' : 'hidden'}
                 className={styles.SecondLevelBlock}
               >
-                {buildThirdLevelMenu(item.pages, firstLevelMenu.route)}
+                {buildThirdLevelMenu(
+                  item.pages,
+                  firstLevelMenu.route,
+                  item.isOpened,
+                )}
               </motion.div>
             </div>
           );
