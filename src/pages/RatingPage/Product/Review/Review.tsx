@@ -9,9 +9,10 @@ import styles from './styles.module.scss';
 interface Props {
   reviews: ReviewModel[];
   productId: string;
+  isOpened: boolean;
 }
 
-export const Review: FC<Props> = ({ reviews, productId }) => {
+export const Review: FC<Props> = ({ reviews, productId, isOpened }) => {
   return (
     <>
       {reviews.map((review) => (
@@ -20,7 +21,7 @@ export const Review: FC<Props> = ({ reviews, productId }) => {
           <hr className={styles.Hr} />
         </div>
       ))}
-      <ReviewForm productId={productId} />
+      <ReviewForm productId={productId} isOpened={isOpened} />
     </>
   );
 };

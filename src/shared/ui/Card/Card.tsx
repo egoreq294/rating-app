@@ -1,25 +1,29 @@
 import cn from 'classnames';
-import { FC, ReactNode, Ref } from 'react';
+import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from 'react';
 
 import styles from './styles.module.scss';
 
 export type CardVariant = 'Primary' | 'Secondary';
 
-interface Props {
+type DivProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
+
+interface Props extends DivProps {
   variant?: CardVariant;
   children: ReactNode;
   className?: string;
-  ref?: Ref<HTMLDivElement>;
 }
 
 export const Card: FC<Props> = ({
   children,
   variant = 'Primary',
   className,
-  ref,
+  ...props
 }) => {
   return (
-    <div className={cn(styles.Card, styles[variant], className)} ref={ref}>
+    <div className={cn(styles.Card, styles[variant], className)} {...props}>
       {children}
     </div>
   );

@@ -32,6 +32,7 @@ export const Product: FC<Props> = ({ className, product }) => {
   const scrollToReview = (): void => {
     setIsReviewOpened(true);
     reviewRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    reviewRef.current?.focus();
   };
 
   return (
@@ -58,8 +59,13 @@ export const Product: FC<Props> = ({ className, product }) => {
           variant="Secondary"
           className={cn(styles.Card, styles.Review)}
           ref={reviewRef}
+          tabIndex={isReviewOpened ? 0 : -1}
         >
-          <Review reviews={product.reviews} productId={product._id} />
+          <Review
+            reviews={product.reviews}
+            productId={product._id}
+            isOpened={isReviewOpened}
+          />
         </Card>
       </motion.div>
     </div>

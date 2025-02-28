@@ -13,9 +13,10 @@ import styles from './styles.module.scss';
 
 interface Props {
   productId: string;
+  isOpened: boolean;
 }
 
-export const ReviewForm: FC<Props> = ({ productId }) => {
+export const ReviewForm: FC<Props> = ({ productId, isOpened }) => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
 
@@ -52,6 +53,7 @@ export const ReviewForm: FC<Props> = ({ productId }) => {
               containerClassName={styles.InputContainer}
               placeholder="Имя"
               error={formState.errors.name?.message}
+              tabIndex={isOpened ? 0 : -1}
             />
           )}
         />
@@ -65,6 +67,7 @@ export const ReviewForm: FC<Props> = ({ productId }) => {
               containerClassName={styles.InputContainer}
               placeholder="Заголовок отзыва"
               error={formState.errors.title?.message}
+              tabIndex={isOpened ? 0 : -1}
             />
           )}
         />
@@ -75,7 +78,9 @@ export const ReviewForm: FC<Props> = ({ productId }) => {
           <Controller
             name="rating"
             control={control}
-            render={({ field }): ReactElement => <Rating {...field} />}
+            render={({ field }): ReactElement => (
+              <Rating {...field} tabIndex={isOpened ? 0 : -1} />
+            )}
           />
         </div>
         <Controller
@@ -89,11 +94,12 @@ export const ReviewForm: FC<Props> = ({ productId }) => {
               className={styles.Textarea}
               placeholder="Текст отзыва"
               error={formState.errors.description?.message}
+              tabIndex={isOpened ? 0 : -1}
             />
           )}
         />
         <div className={styles.Footer}>
-          <Button variant="Primary" type="submit">
+          <Button variant="Primary" type="submit" tabIndex={isOpened ? 0 : -1}>
             Отправить
           </Button>
           <Typography variant="text14" component="span">
