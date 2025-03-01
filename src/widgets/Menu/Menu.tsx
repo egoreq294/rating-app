@@ -61,7 +61,7 @@ export const Menu: FC<Props> = ({ setIsBurgerClose, isMobile }) => {
     return (
       <>
         {pages.map((item) => (
-          <motion.div key={item.category} variants={childrenVariants}>
+          <motion.li key={item.category} variants={childrenVariants}>
             <Link
               tabIndex={isOpened ? 0 : -1}
               onClick={() => {
@@ -74,10 +74,13 @@ export const Menu: FC<Props> = ({ setIsBurgerClose, isMobile }) => {
                 [styles.ThirdLevelLinkActive]:
                   `/${route}/${item.alias}` === pathname,
               })}
+              aria-current={
+                `/${route}/${item.alias}` === pathname ? 'page' : false
+              }
             >
               <Typography variant="text16">{item.category}</Typography>
             </Link>
-          </motion.div>
+          </motion.li>
         ))}
       </>
     );
@@ -87,7 +90,7 @@ export const Menu: FC<Props> = ({ setIsBurgerClose, isMobile }) => {
     firstLevelMenu: FirstLevelMenuItem,
   ): JSX.Element => {
     return (
-      <div>
+      <ul className={styles.List}>
         {menu.map((item) => {
           if (
             typeof pathname === 'string' &&
@@ -99,43 +102,44 @@ export const Menu: FC<Props> = ({ setIsBurgerClose, isMobile }) => {
           }
 
           return (
-            <div key={item._id.secondCategory} className={styles.SecondBlock}>
+            <li key={item._id.secondCategory} className={styles.SecondBlock}>
               <button
                 className={styles.SecondCategoryButton}
                 onClick={() => {
                   openSecondLevel(item._id.secondCategory);
                 }}
+                aria-expanded={item.isOpened}
               >
                 <Typography variant="text14" className={styles.SecondLevelMenu}>
                   {item._id.secondCategory}
                 </Typography>
               </button>
 
-              <motion.div
+              <motion.ul
                 layout
                 variants={variants}
                 initial={item.isOpened ? 'visible' : 'hidden'}
                 animate={item.isOpened ? 'visible' : 'hidden'}
-                className={styles.SecondLevelBlock}
+                className={cn(styles.List, styles.SecondLevelBlock)}
               >
                 {buildThirdLevelMenu(
                   item.pages,
                   firstLevelMenu.route,
                   item.isOpened,
                 )}
-              </motion.div>
-            </div>
+              </motion.ul>
+            </li>
           );
         })}
-      </div>
+      </ul>
     );
   };
 
   const buildFirstLevelMenu = (): JSX.Element => {
     return (
-      <>
+      <ul className={styles.List}>
         {FIRST_LEVEL_MENU.map((item) => (
-          <div key={item.id}>
+          <li key={item.id} aria-expanded={item.id === firstCategory}>
             <Link href={`/${item.route}`}>
               <div
                 className={cn(styles.FirstLevelMenu, {
@@ -147,9 +151,9 @@ export const Menu: FC<Props> = ({ setIsBurgerClose, isMobile }) => {
               </div>
             </Link>
             {item.id === firstCategory && buildSecondLevelMenu(item)}
-          </div>
+          </li>
         ))}
-      </>
+      </ul>
     );
   };
 

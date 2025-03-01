@@ -1,6 +1,3 @@
-// .Menu {
-// }
-
 .FirstLevelMenu {
   display: grid;
   grid-template-columns: 24px 1fr;
@@ -11,6 +8,12 @@
   &:hover {
     color: var(--color-text-active);
   }
+}
+
+.List {
+  padding: 0;
+
+  list-style: none;
 }
 
 .FirstLevelMenuActive {

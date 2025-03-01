@@ -69,12 +69,14 @@ export const RatingPage: FC<Props> = ({
           setSort={setSortState}
         />
       </div>
-      <div className={styles.ProductsBlock}>
+      <ul className={styles.ProductsBlock}>
         {!!sortedProducts.length &&
           sortedProducts.map((item) => (
-            <Product key={item._id} product={item} />
+            <li key={item._id}>
+              <Product product={item} />
+            </li>
           ))}
-      </div>
+      </ul>
       {page.hh && firstLevelCategory === TopLevelCategory.Courses && (
         <Vacancies title={page.category} source="hh.ru" vacancies={page.hh} />
       )}
