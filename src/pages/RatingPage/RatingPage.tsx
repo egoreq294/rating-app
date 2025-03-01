@@ -54,7 +54,12 @@ export const RatingPage: FC<Props> = ({
           {page.title}
         </Typography>
         {!!sortedProducts.length && (
-          <Tag variant="Info" size="m" className={styles.Tag}>
+          <Tag
+            variant="Info"
+            size="m"
+            className={styles.Tag}
+            aria-label={`${products.length} элементов`}
+          >
             {sortedProducts.length}
           </Tag>
         )}

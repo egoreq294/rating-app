@@ -1,12 +1,17 @@
 import cn from 'classnames';
-import React, { FC, ReactNode } from 'react';
+import React, { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from 'react';
 
 import styles from './styles.module.scss';
 
 type TagVariant = 'Primary' | 'Secondary' | 'Success' | 'Error' | 'Info';
 type TagSize = 's' | 'm';
 
-interface Props {
+type SpanProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLSpanElement>,
+  HTMLDivElement
+>;
+
+interface Props extends SpanProps {
   variant: TagVariant;
   size?: TagSize;
   href?: string;
@@ -27,10 +32,11 @@ export const Tag: FC<Props> = ({
   bold,
   href,
   size = 's',
+  ...restProps
 }) => {
   if (href) {
     return (
-      <a
+      <span
         className={cn(
           styles.Tag,
           styles.Link,
@@ -39,12 +45,12 @@ export const Tag: FC<Props> = ({
           { [styles.Bold]: bold },
           className,
         )}
-        href={href}
-        rel="noopener noreferrer"
-        target="_blank"
+        {...restProps}
       >
-        {children}
-      </a>
+        <a href={href} rel="noopener noreferrer" target="_blank">
+          {children}
+        </a>
+      </span>
     );
   }
 
@@ -57,6 +63,7 @@ export const Tag: FC<Props> = ({
         { [styles.Bold]: bold },
         className,
       )}
+      {...restProps}
     >
       {children}
     </span>

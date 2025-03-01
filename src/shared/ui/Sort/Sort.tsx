@@ -47,6 +47,8 @@ export const Sort = <T extends string>({
               direction: sort.value !== item.value ? 'desc' : nextDirection,
             });
           }}
+          aria-selected={sort.value === item.value}
+          aria-label={`Сортировка ${sort.direction} ${item.label}`}
         >
           {sort.value === item.value && (
             <Icon
