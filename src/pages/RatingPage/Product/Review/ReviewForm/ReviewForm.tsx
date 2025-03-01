@@ -20,9 +20,10 @@ export const ReviewForm: FC<Props> = ({ productId, isOpened }) => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
 
-  const { control, handleSubmit, formState, reset } = useForm<ReviewFormState>({
-    defaultValues: REVIEW_FORM_DEFAULT_VALUES,
-  });
+  const { control, handleSubmit, formState, reset, clearErrors } =
+    useForm<ReviewFormState>({
+      defaultValues: REVIEW_FORM_DEFAULT_VALUES,
+    });
 
   const onSubmit = async (values: ReviewFormState): Promise<void> => {
     setError('');
@@ -54,6 +55,7 @@ export const ReviewForm: FC<Props> = ({ productId, isOpened }) => {
               placeholder="Имя"
               error={formState.errors.name?.message}
               tabIndex={isOpened ? 0 : -1}
+              aria-invalid={!!formState.errors.name?.message}
             />
           )}
         />
@@ -68,6 +70,7 @@ export const ReviewForm: FC<Props> = ({ productId, isOpened }) => {
               placeholder="Заголовок отзыва"
               error={formState.errors.title?.message}
               tabIndex={isOpened ? 0 : -1}
+              aria-invalid={!!formState.errors.title?.message}
             />
           )}
         />
@@ -95,11 +98,20 @@ export const ReviewForm: FC<Props> = ({ productId, isOpened }) => {
               placeholder="Текст отзыва"
               error={formState.errors.description?.message}
               tabIndex={isOpened ? 0 : -1}
+              aria-label="Текст отзыва"
+              aria-invalid={!!formState.errors.description?.message}
             />
           )}
         />
         <div className={styles.Footer}>
-          <Button variant="Primary" type="submit" tabIndex={isOpened ? 0 : -1}>
+          <Button
+            variant="Primary"
+            type="submit"
+            tabIndex={isOpened ? 0 : -1}
+            onClick={() => {
+              clearErrors();
+            }}
+          >
             Отправить
           </Button>
           <Typography variant="text14" component="span">
@@ -109,11 +121,12 @@ export const ReviewForm: FC<Props> = ({ productId, isOpened }) => {
         </div>
       </div>
       {isSuccess && (
-        <div className={styles.Success}>
+        <div className={styles.Success} role="alert">
           <IconButton
             variant="Ghost"
             size="S"
             className={styles.CloseButton}
+            aria-label="Закрыть уведомление"
             onClick={() => {
               setIsSuccess(false);
             }}
@@ -127,11 +140,12 @@ export const ReviewForm: FC<Props> = ({ productId, isOpened }) => {
         </div>
       )}
       {error && (
-        <div className={styles.Error}>
+        <div className={styles.Error} role="alert">
           <IconButton
             variant="Ghost"
             size="S"
             className={styles.CloseButton}
+            aria-label="Закрыть уведомление"
             onClick={() => {
               setError('');
             }}

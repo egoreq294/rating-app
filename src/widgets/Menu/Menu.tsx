@@ -153,5 +153,5 @@ export const Menu: FC<Props> = ({ setIsBurgerClose, isMobile }) => {
     );
   };
 
-  return <div className={styles.Menu}>{buildFirstLevelMenu()}</div>;
+  return <nav className={styles.Menu}>{buildFirstLevelMenu()}</nav>;
 };

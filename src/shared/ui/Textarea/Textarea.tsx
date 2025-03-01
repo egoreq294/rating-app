@@ -55,6 +55,7 @@ export const Textarea: FC<Props> = ({
         value={value}
         onChange={onChangeHandler}
         className={cn(styles.Textarea, { [styles.Error]: !!error }, className)}
+        role="alert"
         {...props}
       />
       {error && <span className={styles.ErrorMessage}>{error}</span>}

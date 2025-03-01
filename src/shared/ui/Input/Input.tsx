@@ -31,7 +31,11 @@ export const Input: FC<Props> = ({
         onChange={onChangeHandler}
         {...props}
       />
-      {error && <span className={styles.ErrorMessage}>{error}</span>}
+      {error && (
+        <span role="alert" className={styles.ErrorMessage}>
+          {error}
+        </span>
+      )}
     </div>
   );
 };

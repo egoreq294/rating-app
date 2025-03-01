@@ -21,6 +21,7 @@ export const Footer: FC<Props> = ({ isReviewOpened, setIsReviewOpened }) => {
         onClick={() => {
           setIsReviewOpened((prev) => !prev);
         }}
+        aria-expanded={isReviewOpened}
       >
         Читать отзывы
         <Icon

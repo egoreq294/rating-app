@@ -105,7 +105,19 @@ export const Rating: FC<Props> = ({
   };
 
   return (
-    <div className={cn(styles.Rating, className)} {...props}>
+    <div
+      className={cn(styles.Rating, className)}
+      role={disabled ? '' : 'slider'}
+      aria-valuenow={currentStarCount}
+      aria-valuemin={0}
+      aria-valuemax={5}
+      aria-label={
+        disabled
+          ? `Рейтинг ${currentStarCount}`
+          : 'Укажите рейтинг стрелками вверх или вниз'
+      }
+      {...props}
+    >
       {stars.map((item, index) => (
         <span
           ref={(r) => {
