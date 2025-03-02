@@ -12,6 +12,9 @@ const notoSans = Noto_Sans({
 export const metadata: Metadata = {
   title: 'Rating',
   description: 'My Rating App',
+  openGraph: {
+    locale: 'ru_RU',
+  },
 };
 
 export default async function RootLayout({
