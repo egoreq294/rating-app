@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import React, { FC } from 'react';
 
@@ -12,6 +13,19 @@ type Params = Promise<{ category: string; alias: string }>;
 interface Props {
   params: Params;
 }
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata> => {
+  const { alias } = await params;
+  const page = await getPage(alias);
+
+  return {
+    title: page?.metaTitle,
+  };
+};
 
 export const generateStaticParams = async (): Promise<
   Array<{ category: string; alias: string }>
