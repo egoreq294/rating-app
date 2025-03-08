@@ -2,10 +2,9 @@
 
 import React, { FC, ReactNode, useState } from 'react';
 
-
 import { MenuContext } from '@shared/lib/contexts';
-import { MenuContext as MenuContextProps } from '@shared/types/menuContext';
 import { MenuItem } from '@shared/types/menu';
+import { MenuContext as MenuContextProps } from '@shared/types/menuContext';
 
 interface ConfigProviderProps extends Omit<MenuContextProps, 'setMenu'> {
   children: ReactNode;

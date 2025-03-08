@@ -12,10 +12,6 @@
     "stylelint:fix": "stylelint \"**/*.scss\" --fix",
     "prepare": "husky"
   },
-  "lint-staged": {
-    "**/*.{ts,tsx}": "next lint",
-    "**/*.scss": "stylelint"
-  },
   "dependencies": {
     "classnames": "2.5.1",
     "dayjs": "1.11.13",
