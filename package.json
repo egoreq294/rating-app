@@ -9,7 +9,12 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "stylelint": "stylelint \"**/*.scss\"",
-    "stylelint:fix": "stylelint \"**/*.scss\" --fix"
+    "stylelint:fix": "stylelint \"**/*.scss\" --fix",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "next lint",
+    "**/*.scss": "stylelint"
   },
   "dependencies": {
     "classnames": "2.5.1",
@@ -30,6 +35,8 @@
     "eslint-config-next": "15.1.3",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
+    "husky": "9.1.7",
+    "lint-staged": "15.4.3",
     "sass": "1.83.1",
     "stylelint": "16.12.0",
     "stylelint-config-standard": "36.0.1",
